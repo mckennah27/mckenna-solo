@@ -58,4 +58,9 @@ test('fifth test', async () =>{
     await mp.click(mp.credits);
     await mp.driver.quit();
 
+    await fs.writeFile(`${__dirname}/stephen404Error`,
+        await mp.driver.takeScreenshot(), 'base64', (e) => {
+            if (e) console.error(e)
+            else console.log('page saved');
+
 })
